@@ -10,7 +10,6 @@ import { Todos } from './Todos';
 export function App() {
   const [text, setText] = useState()
   const [todos, setTodos] = useState([])
-  console.log(todos)
   const handleAddButtonClick = () => {
     setTodos([...todos, { text, complete: false }])
     setText("")
@@ -26,12 +25,9 @@ export function App() {
     <div className="App">
       <header className="App-header">
         <h1>To Do</h1>
-        <p>
-          <input type="text" onChange={handleInputChange} value={text}></input>
-          <button onClick={handleAddButtonClick}>Add Task</button>
-          <Todos todos={todos} toggleTodo={toggleTodo} />
-
-        </p>
+        <input type="text" onChange={handleInputChange} value={text}></input>
+        <button onClick={handleAddButtonClick}>Add Task</button>
+        <Todos todos={todos} toggleTodo={toggleTodo} />
       </header>
     </div>
   );
