@@ -1,8 +1,8 @@
-export const Todo = ({ text, complete, toggleTodo }) => {
+export const Todo = ({ text, complete, toggleTodo, index }) => {
     return (
         <div className="todo">
-            <p>
-                <input type="checkbox" onClick={complete = true} onChange={toggleTodo} />
+            <p data-testid="custom-element-textbox">
+                <input type="checkbox" checked={complete} onChange={() => toggleTodo(index)} data-testid="custom-element" />
                 {text}
             </p>
         </div>

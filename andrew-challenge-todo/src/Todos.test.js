@@ -1,9 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { Todos } from './Todos';
+import { Todos } from './todos';
 import React from "react";
 
-test('renders the list of todos', () => {
-    render(<Todos />);
-    const linkElement = screen.getByRole()
-    expect(linkElement).toBeInTheDocument();
+test('Rendering Todos component and the text "test" is presnt', () => {
+
+    let todos = [{ text: "test", toggleTodo: () => { }, key: 0 }]
+    render(<Todos todos={todos} />)
+    expect(screen.getByText(/test/)).toBeInTheDocument();
 });
+
