@@ -4,7 +4,14 @@ import React from "react";
 
 test('Rendering Todos component and the text "test" is presnt', () => {
 
-    let todos = [{ text: "test", toggleTodo: () => { }, key: 0 }]
+    let todos = [{ text: "test", toggleTodo: () => { } }]
+    render(<Todos todos={todos} />)
+    expect(screen.getByText(/test/)).toBeInTheDocument();
+});
+
+test('Rendering Todos component and the text "test" is presnt', () => {
+
+    let todos = [{ text: "test", toggleTodo: () => { } }]
     render(<Todos todos={todos} />)
     expect(screen.getByText(/test/)).toBeInTheDocument();
 });
